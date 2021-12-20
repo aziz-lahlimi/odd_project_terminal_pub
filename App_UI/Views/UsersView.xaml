@@ -47,17 +47,17 @@
             </Grid.RowDefinitions>
 
             <!-- TODO 04 : Besoin de traduction -->
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="First name :"/>
-            <TextBlock Grid.Row="0" Grid.Column="2" Text="Last name :"/>
-            <TextBlock Grid.Row="1" Grid.Column="0" Text="City :"/>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Nom :"/>
+            <TextBlock Grid.Row="0" Grid.Column="2" Text="Prenom :"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Ville :"/>
 
 
             <!-- TODO 04 : Besoin de traduction -->
-            <TextBlock Grid.Row="2" Grid.Column="0" Text="Postal code :"/>
-            <TextBlock Grid.Row="3" Grid.Column="0" Text="Phone :"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="code Postal :"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Téléphone :"/>
             <TextBlock Grid.Row="3" Grid.Column="2" Text="Mobile :"/>
             <TextBlock Grid.Row="4" Grid.Column="0" Text="Email :"/>
-            <TextBlock Grid.Row="5" Grid.Column="0" Text="Birthday :"/>
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="Date de naissance :"/>
 
             <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource dataName}" Text="{Binding FirstName}" d:Text="Nicolas"/>
             <TextBox Grid.Row="0" Grid.Column="3" Style="{StaticResource dataName}" Text="{Binding LastName}" d:Text="Nicolas"/>

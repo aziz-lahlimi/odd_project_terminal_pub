@@ -132,9 +132,6 @@
   <data name="mi_import" xml:space="preserve">
     <value>Import...</value>
   </data>
-  <data name="mi_language" xml:space="preserve">
-    <value>Languages</value>
-  </data>
   <data name="mi_preferences" xml:space="preserve">
     <value>Preferences...</value>
   </data>

@@ -305,9 +305,9 @@ namespace App_UI.ViewModels
         /// </summary>
         private void initRegEx()
         {
-            ReProvince = new Regex(@"TODO");
-            RePhoneNumber = new Regex(@"TODO");
-            RePostalCode = new Regex(@"TODO");
+            ReProvince = new Regex(@"([a-z]{2}|[A-Z]{2})");
+            RePhoneNumber = new Regex(@"(\d{3}-){2}\d{4} | (\d{1}){10} | \d{3}[ ](\d{3}-)\d{4} |  (\d{3})(\d{3}-)\d{4} | (\d{3})[ ](\d{3}-)\d{4}");
+            RePostalCode = new Regex(@"([A-z][1-9]){3} | [a-z][1-9][a-z][ ][a-z][1-9][a-z] | [a-z][1-9][a-z][-][a-z][1-9][a-z] | d{5} ");
 
             ReEmail = new Regex(@"([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*");
         }
@@ -322,7 +322,21 @@ namespace App_UI.ViewModels
             Message = "";
 
             /// TODO 03d : Si c'est un nouvel enregistrement, tout plante. Corrigez la situation.
+            if(!ReProvince.IsMatch(Province))
+            {
+                Message += "La province n'a pas le bon format." + Environment.NewLine;
+            }
 
+
+            if (!RePhoneNumber.IsMatch(Province))
+            {
+                Message += "Le num telephone n'a pas le bon format." + Environment.NewLine;
+            }
+
+            if (!RePostalCode.IsMatch(Province))
+            {
+                Message += "La code postal n'a pas le bon format." + Environment.NewLine;
+            }
             /// TODO 03c : Valider les données de chaque propriété
 
 

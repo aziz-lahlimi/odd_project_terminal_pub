@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using System.Threading.Tasks;
 
 namespace App_UI.Services
 {
@@ -137,6 +138,11 @@ namespace App_UI.Services
                 new Person { FirstName = "Randall", LastName = "Griffith", BirthDay = DateTime.Parse("1977-12-27"), City = "Bakersfield", Province = "CA",PostalCode = "93306", Email = "Donec@vitaeorciPhasellus.ca", Mobile = "279-805-8091", Phone = "693-607-7029"},
             };
 
+        }
+
+        internal Task SetAllFromJson(string v, object allContent)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>

@@ -21,6 +21,7 @@ namespace App_UI.ViewModels
         private IFileDialogService openFileDialog;
         private IFileDialogService saveFileDialog;
         private MessageBoxDialogService confirmDialog;
+        private object allContent;
 
         #endregion
 
@@ -129,13 +130,13 @@ namespace App_UI.ViewModels
         private void ExportData(string obj)
         {
             /// TODO 02a : Compléter ExportData
-            /// Utiliser PeopleDataService.Instance.GetAllAsJson() pour récupérer le json
+            PeopleDataService.Instance.GetAllAsJson(); //pour récupérer le json
         }
 
         private async void ImportData(string obj)
         {
             /// TODO 01b : Compléter la commande d'importation
-            /// Utiliser PeopleDataService.Instance.SetAllFromJson(string allContent)
+            await PeopleDataService.Instance.SetAllFromJson(obj, allContent);
             
         }
 
